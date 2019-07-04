@@ -1,4 +1,4 @@
-# xhr-fetch`
+# xhr-fetch
 
 XHR-powered fetch implementation with extras
 
