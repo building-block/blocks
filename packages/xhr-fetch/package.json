@@ -1,6 +1,6 @@
 {
   "name": "@building-block/xhr-fetch",
-  "version": "1.0.0-alpha.2",
+  "version": "1.0.0-alpha.3",
   "description": "XHR-powered fetch implementation with extras",
   "repository": "building-block/blocks",
   "license": "MIT",
