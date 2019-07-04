@@ -8,12 +8,12 @@
     "Jake Murzy",
     "Julia Qiu"
   ],
-  "main": "lib/xhrFetch.js",
-  "umd:main": "lib/xhrFetch.umd.js",
-  "module": "lib/xhrFetch.mjs",
+  "main": "dist/xhrFetch.js",
+  "umd:main": "dist/xhrFetch.umd.js",
+  "module": "dist/xhrFetch.mjs",
   "source": "src/xhrFetch.js",
   "files": [
-    "lib"
+    "dist"
   ],
   "publishConfig": {
     "access": "public"
@@ -24,6 +24,9 @@
     "dev": "microbundle watch --target web --strict",
     "prepublishOnly": "npm run build",
     "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "devDependencies": {
+    "microbundle": "^0.11.0"
   },
   "keywords": [
     "XHR",
