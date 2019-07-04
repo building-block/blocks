@@ -3,7 +3,8 @@
   "private": true,
   "scripts": {
     "build": "lerna run build",
-    "dev": "lerna run dev"
+    "dev": "lerna run dev",
+    "clean": "git clean -dfiX ."
   },
   "devDependencies": {
     "lerna": "^3.15.0",

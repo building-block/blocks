@@ -8,10 +8,10 @@
     "Jake Murzy",
     "Julia Qiu"
   ],
-  "main": "lib/xhr-fetch.js",
-  "umd:main": "lib/xhr-fetch.umd.js",
-  "module": "lib/xhr-fetch.mjs",
-  "source": "src/xhr-fetch.js",
+  "main": "lib/xhrFetch.js",
+  "umd:main": "lib/xhrFetch.umd.js",
+  "module": "lib/xhrFetch.mjs",
+  "source": "src/xhrFetch.js",
   "files": [
     "lib"
   ],
