@@ -1,0 +1,36 @@
+{
+  "name": "@building-block/xhr-fetch",
+  "version": "0.1.0",
+  "description": "XHR-powered fetch implementation with extras",
+  "repository": "building-block/blocks",
+  "license": "MIT",
+  "authors": [
+    "Jake Murzy",
+    "Julia Qiu"
+  ],
+  "main": "lib/xhr-fetch.js",
+  "umd:main": "lib/xhr-fetch.umd.js",
+  "module": "lib/xhr-fetch.mjs",
+  "source": "src/xhr-fetch.js",
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false,
+  "scripts": {
+    "build": "microbundle --target web --strict",
+    "dev": "microbundle watch --target web --strict",
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "keywords": [
+    "XHR",
+    "XMLHttpRequest",
+    "fetch",
+    "upload",
+    "download",
+    "progress",
+    "react"
+  ]
+}
