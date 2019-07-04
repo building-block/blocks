@@ -1,7 +1,7 @@
 {
   "name": "@building-block/xhr-fetch",
   "version": "1.0.0-alpha.4",
-  "description": "XHR-powered fetch implementation with extras",
+  "description": "XHR-powered fetch implementation with upload and download updates",
   "repository": "building-block/blocks",
   "license": "MIT",
   "authors": [
@@ -21,11 +21,14 @@
   "sideEffects": false,
   "scripts": {
     "build": "microbundle --target web --strict",
-    "dev": "microbundle watch --target web --strict",
+    "dev": "babel-node src/xhrFetch",
     "prepublishOnly": "npm run build",
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "test": "jest"
   },
   "devDependencies": {
+    "@babel/node": "^7.5.0",
+    "babel-jest": "^24.8.0",
+    "jest": "^24.8.0",
     "microbundle": "^0.11.0"
   },
   "keywords": [
@@ -34,7 +37,10 @@
     "fetch",
     "upload",
     "download",
+    "react",
     "progress",
-    "react"
+    "uploader",
+    "abortable",
+    "abortable fetch"
   ]
 }
