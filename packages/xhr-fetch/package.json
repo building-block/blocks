@@ -41,6 +41,8 @@
     "progress",
     "uploader",
     "abortable",
-    "abortable fetch"
+    "abortable fetch",
+    "aws",
+    "s3"
   ]
 }
