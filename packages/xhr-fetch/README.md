@@ -12,6 +12,21 @@ worked on but currently it is not possible to implement request progression usin
 
 If response progression is all you need, `fetch` does provide a low-level API for [response progression](https://fetch.spec.whatwg.org/#fetch-api). In that case we recommend that you stick with the standards unless you prefer a higher level abstraction.
 
+### Installation
+
+#### Using npm:
+
+```sh
+$ npm install --save @building-block/xhr-fetch
+```
+
+#### Using yarn:
+
+```sh
+$ yarn add @building-block/xhr-fetch
+```
+
+
 ## Usage
 
 ```javascript
