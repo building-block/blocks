@@ -23,16 +23,17 @@
   "scripts": {
     "typecheck": "tsc",
     "prebuild": "npm run typecheck",
-    "build": "microbundle --target web --strict && cp dist/trackProgress.mjs dist/trackProgress.es.js",
+    "build": "microbundle --target web --strict --external none",
     "dev": "ts-node src/trackProgress",
     "prepublishOnly": "npm run build",
     "test": "jest"
   },
   "devDependencies": {
-    "microbundle": "^0.11.0",
-    "ts-node": "^8.3.0",
+    "@types/lodash.throttle": "^4.1.6",
     "babel-jest": "^24.8.0",
     "jest": "^24.8.0",
+    "microbundle": "^0.11.0",
+    "ts-node": "^8.3.0",
     "typescript": "^3.5.2"
   },
   "keywords": [

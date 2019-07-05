@@ -1,9 +1,9 @@
 import throttle from 'lodash.throttle';
 
-export const fromXHREvent = (xhrEvent) => {
-  const computable = xhrEvent.lengthComputable;
-  const finished = xhrEvent.position || xhrEvent.loaded;
-  const total = xhrEvent.totalSize || xhrEvent.total;
+export const fromXHREvent = (xhrEvent: any) => {
+  const computable: boolean = xhrEvent.lengthComputable;
+  const finished: number = xhrEvent.position || xhrEvent.loaded;
+  const total: number = xhrEvent.totalSize || xhrEvent.total;
 
   return {
     computable,
@@ -12,7 +12,7 @@ export const fromXHREvent = (xhrEvent) => {
   };
 };
 
-const trackProgress = ({
+export const createProgressTracker = ({
   throttleWait,
 } = { throttleWait: 250 }) => {
   const started = Date.now();
@@ -27,6 +27,7 @@ const trackProgress = ({
     let progress;
     let remaining;
     let elapsed;
+    let bitrate;
 
     if (computable) {
       percent = Math.round((finished * 100) / total);
@@ -41,6 +42,7 @@ const trackProgress = ({
         progress = Math.min(finished, total) / total;
 
         if (speed) {
+          bitrate = speed / 8;
           remaining = 0;
 
           if (percent < 100) {
@@ -67,9 +69,7 @@ const trackProgress = ({
       // Trnasfer speed in bytes/sec
       speed,
       // Trnasfer speed in bits/sec
-      bitrate: speed / 8,
+      bitrate,
     };
   }, throttleWait);
 };
-
-export default trackProgress;

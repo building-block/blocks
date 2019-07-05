@@ -9,13 +9,13 @@ Track progress, bitrate (speed), remaining time from XHR upload & download event
 
 ```javascript
 import xhrFetch from '@building-block/xhr-fetch';
-import trackProgress, { fromXHREvent } from '@building-block/track-progress';
+import { createProgressTracker, fromXHREvent } from '@building-block/track-progress';
 import prettyMs from 'pretty-ms';
 
 
-const trackUploadProgress = trackProgress();
+const trackProgress = createProgressTracker();
 
-const stats = trackUploadProgress(fromXHREvent(xhrEvent));
+const stats = trackProgress(fromXHREvent(xhrEvent));
 ```
 
 Try with [Runkit](https://npm.runkit.com/@building-block/track-progress)
