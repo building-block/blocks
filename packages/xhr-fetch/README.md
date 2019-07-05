@@ -34,7 +34,7 @@ Try with [Runkit](https://npm.runkit.com/@building-block/xhr-fetch)
 
 ### Tracking progress
 
-To provide a better user experience, you might want to want to track progression over time such as bitrate (speed), remaining time, transferred bytes, and overall transfer progress, you can use [@building-block/xhr-track-progress](../xhr-track-progress).
+To provide a better user experience, you might want to display progression over time such as bitrate (speed), remaining time, transferred bytes, and overall transfer progress, you can use [@building-block/track-progress](../track-progress).
 
 ## Caveats
 

@@ -1,5 +1,5 @@
 {
-  "name": "@building-block/xhr-track-progress",
+  "name": "@building-block/track-progress",
   "version": "0.0.0",
   "description": "Track progress, bitrate (speed), remaining time from XHR upload & download events",
   "repository": "building-block/blocks",
@@ -8,11 +8,11 @@
     "Jake Murzy",
     "Julia Qiu"
   ],
-  "main": "dist/xhrTrackProgress.js",
-  "umd:main": "dist/xhrTrackProgress.umd.js",
-  "module": "dist/xhrTrackProgress.mjs",
-  "types": "dist/xhrTrackProgress.d.ts",
-  "source": "src/xhrTrackProgress.ts",
+  "main": "dist/trackProgress.js",
+  "umd:main": "dist/trackProgress.umd.js",
+  "module": "dist/trackProgress.mjs",
+  "types": "dist/trackProgress.d.ts",
+  "source": "src/trackProgress.ts",
   "files": [
     "dist"
   ],
@@ -23,8 +23,8 @@
   "scripts": {
     "typecheck": "tsc",
     "prebuild": "npm run typecheck",
-    "build": "microbundle --target web --strict && cp dist/xhrTrackProgress.mjs dist/xhrTrackProgress.es.js",
-    "dev": "ts-node src/xhrTrackProgress",
+    "build": "microbundle --target web --strict && cp dist/trackProgress.mjs dist/trackProgress.es.js",
+    "dev": "ts-node src/trackProgress",
     "prepublishOnly": "npm run build",
     "test": "jest"
   },
@@ -54,6 +54,10 @@
     "elapsed time",
     "uploader",
     "abortable",
-    "abortable fetch"
-  ]
+    "abortable fetch",
+    "progression"
+  ],
+  "dependencies": {
+    "lodash.throttle": "^4.1.1"
+  }
 }

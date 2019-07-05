@@ -1,5 +1,5 @@
 function xhrFetch() {
-  console.log('test')
+  // console.log('test')
 }
 
 export default xhrFetch;

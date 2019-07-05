@@ -2,7 +2,7 @@
 // https://jestjs.io/docs/en/configuration.html
 
 module.exports = {
-  displayName: "xhr-track-progress",
+  displayName: "track-progress",
 
   // All imported modules in your tests should be mocked automatically
   // automock: false,
