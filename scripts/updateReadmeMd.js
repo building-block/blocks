@@ -19,7 +19,11 @@ const createBadges = (pkg) => `
 <a href="https://unpkg.com/${pkg.name}/"><img src="https://img.badgesize.io/https://unpkg.com/${pkg.name}/${pkg.main}?compression=gzip" alt="gzip size"></a>
 `.replace(/(?:\r\n|\r|\n)/g, '');
 
-const createRow = (pkg) => `| ${pkg.name} | ${pkg.description} | ${createBadges(pkg)} |`
+const createRow = (pkg) => {
+  const [, moduleName] = pkg.name.split('/');
+
+  return `| [${pkg.name}](packages/${moduleName}) | ${pkg.description} | ${createBadges(pkg)} |`;
+};
 
 const rows = packages.map(createRow).join('\n');
 
