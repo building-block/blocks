@@ -1,4 +1,4 @@
-import xhrFetch from '../src/xhrFetch';
+import xhrFetch from '../xhrFetch';
 
 describe('@building-block/xhr-fetch', () => {
   it('should pass sanity check', () => {

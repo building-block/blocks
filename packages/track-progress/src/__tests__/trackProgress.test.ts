@@ -1,5 +1,5 @@
 import { advanceBy, advanceTo, clear } from 'jest-date-mock';
-import { createProgressTracker } from '../src/trackProgress';
+import { createProgressTracker } from '../trackProgress';
 
 describe('@building-block/track-progress', () => {
   it('should pass sanity check', () => {
