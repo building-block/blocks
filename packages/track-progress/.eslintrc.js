@@ -1,5 +1,5 @@
 module.exports = {
-  root: true,
+  // TODO use @typescript-eslint/parser 
   parser: 'babel-eslint',
   env: {
     es6: true,
@@ -7,8 +7,5 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 2018,
     sourceType: 'module',
-  },
-  rules: {
-    'no-console': 'error',
   },
 }
