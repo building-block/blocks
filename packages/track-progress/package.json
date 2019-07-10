@@ -24,7 +24,7 @@
     "typecheck": "tsc",
     "prebuild": "npm run typecheck",
     "build": "microbundle --target web --strict --external none",
-    "dev": "ts-node src/trackProgress",
+    "dev": "NODE_ENV=test ts-node src/trackProgress",
     "prepublishOnly": "npm run build",
     "test": "jest"
   },
@@ -32,6 +32,7 @@
     "@types/lodash.throttle": "^4.1.6",
     "babel-jest": "^24.8.0",
     "jest": "^24.8.0",
+    "jest-date-mock": "^1.0.7",
     "microbundle": "^0.11.0",
     "ts-node": "^8.3.0",
     "typescript": "^3.5.2"

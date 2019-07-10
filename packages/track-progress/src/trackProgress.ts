@@ -47,7 +47,7 @@ export const createProgressTracker = ({
 
           if (percent < 100) {
             remaining = (total / speed) - elapsed;
-            remaining = remaining.toFixed(4);
+            remaining = Number(remaining.toFixed(4));
           }
         }
       }

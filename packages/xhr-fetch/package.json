@@ -21,7 +21,7 @@
   "sideEffects": false,
   "scripts": {
     "build": "microbundle --target web --strict",
-    "dev": "babel-node src/xhrFetch",
+    "dev": "NODE_ENV=test babel-node src/xhrFetch",
     "prepublishOnly": "npm run build",
     "test": "jest"
   },
