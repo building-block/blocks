@@ -1,6 +1,6 @@
 {
   "name": "@building-block/track-progress",
-  "version": "1.0.0-alpha.2",
+  "version": "1.0.0-alpha.3",
   "description": "Track progress, bitrate (speed), remaining time from XHR upload & download events",
   "repository": "building-block/blocks",
   "license": "MIT",
