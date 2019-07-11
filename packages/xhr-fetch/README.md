@@ -2,8 +2,7 @@
 
 XHR-powered fetch implementation with extras
 
-<a href="https://www.npmjs.com/package/@building-block/xhr-fetch"><img src="https://img.shields.io/npm/v/@building-block/xhr-fetch.svg?style=flat" alt="npm"></a>
-<a href="https://unpkg.com/@building-block/xhr-fetch/"><img src="https://img.badgesize.io/https://unpkg.com/@building-block/xhr-fetch/dist/xhrFetch.js?compression=gzip" alt="gzip size"></a>
+[![NPM](https://img.shields.io/npm/v/@building-block/xhr-fetch.svg?style=flat)](https://www.npmjs.com/package/@building-block/xhr-fetch) [![Gzip Size](https://img.badgesize.io/https://unpkg.com/@building-block/xhr-fetch/dist/xhrFetch.js?compression=gzip)](https://unpkg.com/@building-block/xhr-fetch/)
 
 Although `fetch` is a relatively low-level API and in most cases more complete than XMLHttpRequest, it does not provide an API for request progression. A proposal for [`FetchObserver`](https://github.com/whatwg/fetch/issues/607) is being
 worked on but currently it is not possible to implement request progression using just `fetch`.

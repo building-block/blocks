@@ -15,8 +15,8 @@ const heading = '| Package | Description | Metadata |';
 const justifyContent = '| --- | --- | --- |';
 
 const createBadges = (pkg) => `
-<a href="https://www.npmjs.com/package/${pkg.name}"><img src="https://img.shields.io/npm/v/${pkg.name}.svg?style=flat" alt="npm"></a>
-<a href="https://unpkg.com/${pkg.name}/"><img src="https://img.badgesize.io/https://unpkg.com/${pkg.name}/${pkg.main}?compression=gzip" alt="gzip size"></a>
+[![NPM](https://img.shields.io/npm/v/${pkg.name}.svg?style=flat)](https://www.npmjs.com/package/${pkg.name})
+[![Gzip Size](https://img.badgesize.io/https://unpkg.com/${pkg.name}/${pkg.main}?compression=gzip)](https://unpkg.com/${pkg.name}/)
 `.replace(/(?:\r\n|\r|\n)/g, '');
 
 const createRow = (pkg) => {
