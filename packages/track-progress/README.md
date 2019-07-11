@@ -23,12 +23,17 @@ $ yarn add @building-block/track-progress
 ```javascript
 import xhrFetch from '@building-block/xhr-fetch';
 import { createProgressTracker, fromXHREvent } from '@building-block/track-progress';
-import prettyMs from 'pretty-ms';
 
+const trackUploadProgress = createProgressTracker();
 
-const trackProgress = createProgressTracker();
-
-const stats = trackProgress(fromXHREvent(xhrEvent));
+response = await xhrFetch('/upload', {
+  method: 'PUT',
+  /* ... */
+  onUploadProgress: xhrEvent => {
+    const stats = trackUploadProgress(fromXHREvent(xhrEvent));
+    /* ... */
+  },
+});
 ```
 
 Try with [Runkit](https://npm.runkit.com/@building-block/track-progress)
