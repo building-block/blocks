@@ -54,22 +54,22 @@ To provide a better user experience, you might want to display progression over 
 
 ### Aborting requests
 
-`xhr-fetch` supports the abortable fetch API. However, on the client-side, aborting a fetch requires additional DOM APIs: AbortController and AbortSignal. You will need to include an additional polyfill to include these APIs.
+`xhr-fetch` supports the abortable fetch API. However, on the client-side, aborting a fetch requires additional DOM APIs: AbortController, AbortSignal and DOMException. You will need to include an additional polyfill to include these APIs.
 
 ```javascript
 import xhrFetch from '@building-block/xhr-fetch';
 
-const controller = new AbortController();
+const abortController = new AbortController();
 
 xhrFetch('/endpoint', {
-  signal: controller.signal,
+  signal: abortController.signal,
 }).catch((error) => {
   if (error.name === 'AbortError') {
     console.log('Aborted');
   }
 });
 
-controller.abort();
+abortController.abort();
 ```
 
 ### Looking for a `fetch` polyfill?

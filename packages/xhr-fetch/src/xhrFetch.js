@@ -124,7 +124,7 @@ const xhrFetch = (endpoint, {
   });
 
   xmlHttpRequest.addEventListener('abort', () => {
-    reject(new Error('Aborted'));
+    reject(new DOMException('Aborted', 'AbortError'));
   });
 
   xmlHttpRequest.addEventListener('load', () => {
