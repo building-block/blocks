@@ -2,7 +2,7 @@
 
 [DOMException](https://heycam.github.io/webidl/#idl-DOMException) polyfill
 
-[![NPM](https://img.shields.io/npm/v/@building-block/idl-domexception.svg?style=flat)](https://www.npmjs.com/package/@building-block/idl-domexception) [![Gzip Size](https://img.badgesize.io/https://unpkg.com/@building-block/idl-domexception/dist/xhrFetch.js?compression=gzip)](https://unpkg.com/@building-block/idl-domexception/)
+[![NPM](https://img.shields.io/npm/v/@building-block/idl-domexception.svg?style=flat)](https://www.npmjs.com/package/@building-block/idl-domexception) [![Gzip Size](https://img.badgesize.io/https://unpkg.com/@building-block/idl-domexception/dist/domException.js?compression=gzip)](https://unpkg.com/@building-block/idl-domexception/)
 
 ### Installation
 
