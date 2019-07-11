@@ -1,0 +1,48 @@
+{
+  "name": "@building-block/whatwg-domexception",
+  "version": "0.1.0",
+  "description": "DOMException polyfill",
+  "repository": "building-block/blocks",
+  "license": "MIT",
+  "authors": [
+    "Jake Murzy",
+    "Julia Qiu"
+  ],
+  "main": "dist/domException.js",
+  "umd:main": "dist/domException.umd.js",
+  "module": "dist/domException.mjs",
+  "source": "src/domException.js",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false,
+  "scripts": {
+    "build": "microbundle --target web --strict --external none",
+    "dev": "NODE_ENV=test babel-node src/domException",
+    "prepublishOnly": "npm run build",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@babel/node": "^7.5.0",
+    "babel-jest": "^24.8.0",
+    "jest": "^24.8.0",
+    "microbundle": "^0.11.0"
+  },
+  "keywords": [
+    "DOMException",
+    "polyfill",
+    "dom exception",
+    "DOM",
+    "Web IDL",
+    "webidl",
+    "error",
+    "exception",
+    "whatwg"
+  ],
+  "dependencies": {
+    "domexception": "^1.0.1"
+  }
+}

@@ -2,7 +2,7 @@
 // https://jestjs.io/docs/en/configuration.html
 
 module.exports = {
-  displayName: "track-progress",
+  displayName: "whateg-domexception",
 
   // All imported modules in your tests should be mocked automatically
   // automock: false,
@@ -122,7 +122,7 @@ module.exports = {
   // runner: "jest-runner",
 
   // The paths to modules that run some code to configure or set up the testing environment before each test
-  setupFiles: ['jest-date-mock'],
+  // setupFiles: [],
 
   // A list of paths to modules that run some code to configure or set up the testing framework before each test
   // setupFilesAfterEnv: [],
@@ -131,7 +131,7 @@ module.exports = {
   // snapshotSerializers: [],
 
   // The test environment that will be used for testing
-  // testEnvironment: "jest-environment-jsdom",
+  testEnvironment: "jest-environment-jsdom",
 
   // Options that will be passed to the testEnvironment
   // testEnvironmentOptions: {},
@@ -167,7 +167,7 @@ module.exports = {
 
   // A map from regular expressions to paths to transformers
   transform: {
-    '^.+\\.ts?$': 'babel-jest',
+    '^.+\\.js?$': 'babel-jest',
   },
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
