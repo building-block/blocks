@@ -1,6 +1,6 @@
 import { polyfill } from '../domException';
 
-describe('@building-block/whatwg-domexception', () => {
+describe('@building-block/idl-domexception', () => {
   beforeAll(() => {
     // Delete DOMException from jsdom
     delete window.DOMException;

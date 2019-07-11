@@ -54,7 +54,7 @@ To provide a better user experience, you might want to display progression over 
 
 ### Aborting requests
 
-`xhr-fetch` supports the abortable fetch API. This feature requires that you include additional polyfills for AbortController, AbortSignal and [DOMException](../whatwg-domexception).
+`xhr-fetch` supports the abortable fetch API. This feature requires that you include additional polyfills for AbortController, AbortSignal and [DOMException](../idl-domexception).
 
 ```javascript
 import xhrFetch from '@building-block/xhr-fetch';
