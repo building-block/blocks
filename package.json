@@ -2,6 +2,7 @@
   "name": "blocks",
   "private": true,
   "scripts": {
+    "postinstall": "lerna bootstrap",
     "prebuild": "lerna bootstrap",
     "build": "lerna run build",
     "publish": "node ./scripts/updateReadmeMd.js && lerna publish",

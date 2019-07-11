@@ -1,4 +1,6 @@
-# Blocks [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
+# Blocks
+
+[![CircleCI](https://img.shields.io/circleci/project/@building-block/blocks/master.svg?style=flat)](https://circleci.com/gh/@building-block/blocks) [![Lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
 
 Building blocks are basic units of code from which larger modules can be built
 
