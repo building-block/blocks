@@ -1,39 +1,69 @@
 import throttle from 'lodash.throttle';
 
-export const fromXHREvent = (xhrEvent: any) => {
-  const computable: boolean = xhrEvent.lengthComputable;
-  const finished: number = xhrEvent.position || xhrEvent.loaded;
-  const total: number = xhrEvent.totalSize || xhrEvent.total;
+interface ProgressTrackerConfig {
+  throttleWait: number;
+  [key: string]: any;
+}
 
-  return {
-    computable,
-    finished,
-    total,
-  };
-};
+interface CurrentProgress {
+  // total bytes to be transferred
+  total?: number;
+  // total bytes finished transfering
+  finished?: number;
+  // Overall percent; 0-100
+  percent?: number;
+  // Overall progress; 0-1
+  progress?: number;
+  // Total time elapsed in seconds
+  elapsed: number;
+  // Remaining time to completion in seconds
+  remaining?: number;
+  // Trnasfer speed in bytes/sec
+  speed?: number;
+  // Trnasfer speed in bits/sec
+  bitrate?: number;
+}
+
+interface TransferEvent {
+    // total bytes to be transferred
+    total: number;
+    // total bytes finished transfering
+    finished: number;
+    computable: boolean;
+}
+
+type MaybeProgressValue<T> = T | undefined;
+
+export const fromXHREvent = (xhrEvent: ProgressEvent): TransferEvent => ({
+  computable: xhrEvent.lengthComputable,
+  finished: xhrEvent.loaded,
+  total: xhrEvent.total,
+});
 
 export const createProgressTracker = ({
   throttleWait,
-} = { throttleWait: 250 }) => {
+}: ProgressTrackerConfig = { throttleWait: 250 }) => {
   const started = Date.now();
 
   return throttle(({
     total,
     finished,
-    computable = true,
-  }) => {
-    let percent;
-    let speed;
-    let progress;
-    let remaining;
-    let elapsed;
-    let bitrate;
+    computable = total > 0 && finished >= 0,
+  }: TransferEvent): CurrentProgress => {
+    let elapsed: number;
+
+    let percent: MaybeProgressValue<number>;
+    let speed: MaybeProgressValue<number>;
+    let progress: MaybeProgressValue<number>;
+    let remaining: MaybeProgressValue<number>;
+    let bitrate: MaybeProgressValue<number>;
+
+    elapsed = (Date.now() - started) / 1000;
 
     if (computable) {
       percent = Math.round((finished * 100) / total);
 
-      elapsed = (Date.now() - started) / 1000;
-
+      // wait till values warm up
       if (elapsed >= 1) {
         speed = finished / elapsed;
       }
@@ -54,21 +84,13 @@ export const createProgressTracker = ({
     }
 
     return {
-      // total bytes to be transferred
       total,
-      // total bytes finished transfering
       finished,
-      // Overall percent; 0-100
       percent,
-      // Overall progress; 0-1
       progress,
-      // Total time elapsed in seconds
       elapsed,
-      // Remaining time to completion in seconds
       remaining,
-      // Trnasfer speed in bytes/sec
       speed,
-      // Trnasfer speed in bits/sec
       bitrate,
     };
   }, throttleWait);

@@ -6,7 +6,51 @@ describe('@building-block/track-progress', () => {
     expect(true).toBe(true);
   });
 
-  it('correctly tracks progress', () => {
+  it('produces undefined values when not computable', () => {
+    advanceTo(new Date(2019, 6, 10, 0, 0, 0));
+
+    const trackProgress = createProgressTracker({ throttleWait: 0 });
+    const oneMinute = 60 * 1000;
+
+    expect(trackProgress({})).toMatchObject({
+      bitrate: undefined,
+      elapsed: 0,
+      finished: undefined,
+      percent: undefined,
+      progress: undefined,
+      remaining: undefined,
+      speed: undefined,
+      total: undefined,
+    });
+
+    advanceBy(oneMinute);
+
+    expect(trackProgress({ computable: false })).toMatchObject({
+      bitrate: undefined,
+      elapsed: 60,
+      finished: undefined,
+      percent: undefined,
+      progress: undefined,
+      remaining: undefined,
+      speed: undefined,
+      total: undefined,
+    });
+
+    advanceBy(oneMinute);
+
+    expect(trackProgress({ total: 0, finished: 0 })).toMatchObject({
+      bitrate: undefined,
+      elapsed: 120,
+      finished: 0,
+      percent: undefined,
+      progress: undefined,
+      remaining: undefined,
+      speed: undefined,
+      total: 0,
+    });
+  });
+
+  it('computes correct progress values over time', () => {
     advanceTo(new Date(2019, 6, 10, 0, 0, 0));
 
     const trackProgress = createProgressTracker({ throttleWait: 0 });
