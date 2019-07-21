@@ -35,10 +35,10 @@ xhrFetch('https://postman-echo.com/put', {
   method: 'PUT',
   headers: { /* headers */ },
   body: { /* body */ },
-  onDownloadProgress = (xhrEvent) => {
+  onDownloadProgress: (xhrEvent) => {
     console.log('Upload progression', xhrEvent);
   },
-  onUploadProgress = (xhrEvent) => {
+  onUploadProgress: (xhrEvent) => {
     console.log('Download progression', xhrEvent);
   },
 });
